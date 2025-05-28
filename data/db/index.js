@@ -1,8 +1,14 @@
-const initialTasks = require('../../task.json')
+// config/db.js
+const mongoose = require('mongoose');
 
-// In-memory database
-let tasks = [
-    ...initialTasks.tasks
-];
+async function connectDB() {
+  try {
+    await mongoose.connect('mongodb+srv://admin:525678@cluster0.d0luzlj.mongodb.net/airtribe');
+    console.log("✅ MongoDB connected using Mongoose");
+  } catch (err) {
+    console.error("❌ MongoDB connection error:", err);
+    process.exit(1);
+  }
+}
 
-module.exports = tasks;
+module.exports = connectDB;
