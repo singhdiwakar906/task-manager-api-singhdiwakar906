@@ -12,9 +12,9 @@ pnpm-debug.log*
 .pnpm-store/
 
 # dotenv files
-# .env
-# .env.*.local
-# .env.local
+.env
+.env.*.local
+.env.local
 
 .tap
 
