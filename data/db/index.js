@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 
 async function connectDB() {
   try {
-    await mongoose.connect('mongodb+srv://admin:525678@cluster0.d0luzlj.mongodb.net/airtribe');
+    let mongo_string = process.env.MONGO_CRED
+    await mongoose.connect(mongo_string);
     console.log("✅ MongoDB connected using Mongoose");
   } catch (err) {
     console.error("❌ MongoDB connection error:", err);
